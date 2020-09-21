@@ -1,5 +1,6 @@
-import { ExamplePageController } from './pages/Example/ExamplePageController';
-import { HomePageController } from './pages/Home/HomePageController';
+import { ExamplePageController } from './pages/ExamplePageController';
+
+
 class App {
 
   mainPages = [

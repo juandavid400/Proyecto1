@@ -1,0 +1,895 @@
+//@import url('../fonts/fonts');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
+
+//Twitter Font
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+//instagram
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
+//Facebook
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap');
+//Github
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@600&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 20px;
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgb(13, 104, 1);
+    border-radius: 10px;
+    &:hover {
+      background: #045311;
+    }
+  }
+}
+#example-page{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+        .Topbar{
+            position: fixed;    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: row;
+            height: 8vh;
+            width: 100%;
+            background-color: rgb(237, 237, 108);
+            opacity: 1;
+            .Busqueda {
+              // margin: 15px;
+              margin-left: 90vw;
+              display: flex;
+              height: 100%;
+              width: auto;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              cursor: pointer;
+              img{
+                height: 90%;
+                width: auto;
+              }
+            } 
+           }
+
+    //------Inicio del body------//
+    .CuerpoCompleto {
+        overflow-x: hidden;
+        width: 100vw;
+        height: 800vh;
+        display: flex;
+        flex-flow: column; 
+    }
+        .bienvenida {
+        position: relative;
+        opacity: 0.60;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("../assets/Bienvenida.jpg");
+        min-height: 100vh;
+        .caption {
+            font-family: "Satisfy", cursive;
+            position: absolute;
+            justify-items: center;
+            top: 30vh;
+            width: 100%;
+            text-align: center;
+            color: #000;
+            span.border {
+                background-color: #111;
+                color: #fff;
+                padding: 18px;
+                font-size: 8vmax;;
+                letter-spacing: 2px;
+            }
+          }
+      }
+    .Img-2 {
+        position: relative;
+        opacity: 0.65;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("../assets/Cali2.jpg");
+        min-height: 45vh;
+    }
+    
+    .Img-4 {
+        position: relative;
+        opacity: 0.65;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("../assets/Cali4.jpg");
+        min-height: 30vh;
+    }
+
+    .caption {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        text-align: center;
+        color: #000;
+        span.border {
+            background-color: #111;
+            color: #fff;
+            padding: 18px;
+            font-size: 25px;
+            letter-spacing: 10px;
+        }
+    }
+    h3 {
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font: 20px "Lato", sans-serif;
+        color: #111;
+    }
+
+    //----------Seccion de Menu de navegacion--------------//
+    .MenuNavegacion{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 32vw);
+      grid-gap: 1vw;
+      width: 100vw;
+      height: 100vh;
+      top: 0px;
+      left: 0px;
+      background: white;
+    }
+    
+    .Interior {
+      display: flex; 
+      flex-flow: column; 
+      justify-content: center;
+      border-radius: 15px;
+      margin: 10% 5% 10% 5%;
+      background: white;
+      transition: 0.5s;
+
+      a {
+        font-family: "Satisfy", cursive;
+        // margin-top: -700px;
+        font-size: 5vh;
+        text-align: center;
+        color: black;
+        cursor: pointer;
+
+      }
+      .Descripcion {
+        font-family: 'Sriracha', cursive;
+        margin-top: 50px;
+        font-size: 5vh;
+        text-align: center;
+        color: black;
+        cursor: pointer;
+        
+      }
+      &:hover {
+        margin: 1% 5% 1% 5%;
+        background-color: gray;
+        transition: ease;
+    }
+    }
+   
+    .Interior2 {
+      display: flex; 
+      flex-flow: column; 
+      justify-content: center;
+      border-radius: 15px;
+      margin: 10% 5% 10% 5%;
+      background: red;
+      transition: 0.5s;
+
+      a {
+        font-family: "Satisfy", cursive;
+        // margin-top: -700px;
+        font-size: 5vh;
+        text-align: center;
+        color: black;
+      }
+      .Descripcion {
+        font-family: 'Sriracha', cursive;
+        margin-top: 50px;
+        font-size: 5vh;
+        text-align: center;
+        color: black;
+        cursor: pointer;
+        transition: 0.3s; 
+      }
+      &:hover {
+        transition: 1s; 
+        margin: 1% 5% 1% 5%;
+        background-color: rgb(128, 9, 9);
+        transition: ease;
+    }
+    }
+    .Interior3 {
+      display: flex; 
+      flex-flow: column; 
+      justify-content: center;
+      border-radius: 15px;
+      margin: 10% 5% 10% 5%;
+      background: black;
+      transition:0.5s;
+
+      a {
+        font-family: "Satisfy", cursive;
+        // margin-top: -700px;
+        font-size: 5vh;
+        text-align: center;
+        color: white;
+      }
+      .Descripcion {
+        font-family: 'Sriracha', cursive;
+        margin-top: 50px;
+        font-size: 5vh;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+      }
+      &:hover {
+        margin: 1% 5% 1% 5%;
+        background-color: rgb(89, 73, 73);
+        transition: ease;
+    }
+    }
+
+    //---------Seccion saludo-----------//
+    .Saludo {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 49vw);
+        grid-gap: 1vw;
+        width: 100vw;
+        height: 100vh;
+        top: 0px;
+        left: 0px;
+        background: rgb(52,66,66);
+        overflow-y: hidden;
+      }
+      
+      .Interior_2 {
+        display: flex; 
+        flex-flow: column; 
+        justify-content: center;
+        border-radius: 15px;
+        margin: 10% 5% 10% 5%;
+        background: rgb(52,66,66);
+  
+        .Texto_2 {
+          font-family: "Satisfy", cursive;
+          font-size: 18vh;
+          text-align: center;
+          color: white;
+        }
+        .Descripcion_2 {
+          animation: slide-left 10s;
+          font-family: 'Sriracha', cursive;
+          font-size: 3vh;
+          text-align: center;
+          color: white;
+        }
+        @keyframes Descripcion_2 {
+            from {
+                margin-left: 100%;
+                width: 300%;
+            }
+            to {
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+        .linea {
+          margin-top: 40px;
+          height: 9px;
+          width: 100%;
+          background-color: white;
+        }
+      }
+     
+      .Interior2_2 {
+        display: flex; 
+        flex-flow: column; 
+        justify-content: center;
+        border-radius: 15px;
+        margin: 10% 5% 10% 5%;
+        background: rgb(52,66,66);
+  
+        .Texto_2 {
+          font-family: "Satisfy", cursive;
+          // margin-top: -700px;
+          font-size: 8vh;
+          text-align: center;
+          color: white;
+        }
+        .Descripcion_2 {
+          font-family: 'Sriracha', cursive;
+          margin-top: 50px;
+          font-size: 3vh;
+          text-align: center;
+          color: white;
+          cursor: pointer;
+        }
+      }
+    
+
+    //-------Seccion foto 3-------------//
+    .Img-3 {
+        position: relative;
+        opacity: 0.65;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("../assets/Cali3.jpg");
+        min-height: 40vh;
+    }
+
+    //-----------Seccion de Work------------//
+    .Work {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background: rgb(171,235,174);
+      }
+      
+      .Interior_4 {
+        
+        .Texto_4 {
+          width: 100%;
+          font-family: "Satisfy", cursive;
+          font-size: 20vh;
+          // margin: 100px 0px 0px 300px;
+          text-align: center;
+          color: black;       
+        }
+        
+        .Descripcion_4 {
+          width: 100%;
+          padding: 1vh 10vw 0px 10vw;
+          font-family: 'Sriracha', cursive;
+          font-size: 3.5vw;
+          justify-content: center;
+          align-items: center;
+          // margin: 0px 4000px 0px 0px;
+          text-align: center;
+          color: black;        
+        }
+        .linea2{
+          display: flex;
+          justify-content: center;
+          align-content: center;
+          margin-top: 5vh;
+          height: 12px;
+          width: 0vw;
+          margin-left: 20vw;
+          background-color: black;
+          animation-timing-function: ease
+        }
+  
+    }
+
+    //------------Seccion ilustraciones-----------//
+    .Ilustraciones {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 49vw);
+        grid-gap: 1vw;
+        width: 100vw;
+        height: 100vh;
+
+        left: 0px;
+        background: rgb(255,255,157);
+      }
+      
+      .Interior_5 {
+        
+        display: flex; 
+        flex-flow: column; 
+        max-height: 90vh;
+        justify-content: center;
+        border-radius: 15px;
+        margin-top: 1%;
+        margin-left: 5%;
+        background: rgb(255,255,157);
+  
+        .Texto_5 {
+          font-family: "Satisfy", cursive;
+          font-size: 450%;
+          text-align: center;
+          color: black;
+        }
+        .Descripcion_5 {
+          font-family: 'Sriracha', cursive;
+          margin-top: 50px;
+          font-size: 110%;
+          text-align: center;
+          color: black;
+          cursor: pointer;
+        }
+      }
+     
+      .Interior2_5 {
+        max-height: 90vh;
+        display: flex; 
+        flex-flow: column; 
+        justify-content: center;
+        border-radius: 15px;
+        margin-top: 1%;
+        margin-left: 5%;
+        background: rgb(255,255,157);
+  
+       .Cuadro3{
+         height: 100%;
+         padding-left: 400px;
+         padding-right: 400px;
+         border-radius: 60px;
+       }
+      }
+
+    //-----------------Fotos de ilustraciones-------------//
+
+    .Photosilustraciones {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 32vw);
+        grid-gap: 1vw;
+        width: 100vw;
+        height: 100vh;
+        top: 0px;
+        left: 0px;
+        background:rgb(61, 175, 147);
+      }
+      
+      .Interior_6 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        margin: 10% 5% 10% 5%;
+        background: rgb(255,255,157);
+  
+        .Cuadro {
+          width: 90%;
+          height: auto;
+         // margin-top: 600px;
+         transition: 0.5s;
+        }
+        
+        &:hover .Cuadro{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 0px;
+          width: 100%;
+          height: auto;
+      } 
+
+      }
+     
+      .Interior2_6 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        margin: 10% 5% 10% 5%;
+        background: rgb(255,255,157);
+  
+        .Cuadro2 {
+            width: 90%;
+            height: auto;
+          //margin-top: 600px;
+          transition: 0.5s;
+        }
+  
+        &:hover .Cuadro2{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 0px;
+          width: 100%;
+          height: auto;
+      }
+      }
+      .Interior3_6 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 15px;
+        margin: 10% 5% 10% 5%;
+        background: rgb(255,255,157);
+  
+        .Cuadro3 {
+            width: 90%;
+            height: auto;
+         // margin-top: 600px;
+         transition: 0.5s;
+         
+        }
+        &:hover .Cuadro3{
+          //transition: ease-in;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 0px;
+          width: 100%;
+          height: auto;
+      }
+      }
+    //--------------------Seccion Clientes---------//
+    .Clientes{
+        height: 100vh;
+        width: 100vw;
+    }
+
+    //----------Foto antes de los contactos
+    .img3 {
+        position: relative;
+        opacity: 0.65;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-image: url("../assets/Cali3.jpg");
+        min-height: 50vh;
+    }
+
+    //-------Seccion de contacto-----//
+    .contacttitle{
+        background-color: rgb(102, 102, 102);
+        .tituloContacto{
+        text-align: center;
+        color: #FFF;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 20vh;
+        letter-spacing: 1px;
+        font-family: 'Josefin Sans', sans-serif;
+        .letraTituloContacto{
+            background-image: url("https://i.gifer.com/24Br.gif");
+            background-size: cover;
+            color: transparent;
+            background-clip: text;
+	        -webkit-background-clip: text;
+            text-transform: uppercase;
+            font-size: 300%;
+            //line-height: .75;
+            margin: 10px 0;
+        }
+        }
+        }
+    
+    .SeccionContacto{
+        display: grid;
+        width: 100%;
+        height: 80vh;
+        background-color: black;
+        grid-template-columns: repeat(auto-fill,50%);
+        .SocialNetworks{
+            width: 100%;
+            height: 100%;
+            margin-left: 5%;
+            
+            .letracontactoFacebook { 
+                font-family: 'Kumbh Sans', sans-serif;
+                max-width: 70%;
+                margin: 0; 
+                padding: 0; 
+                position: relative;
+                top: 15%;
+                font-size: 5em; 
+                color: black; 
+                text-shadow: 2px 0 0 #002896, -2px 0 0 #002896, 0 2px 0 #002896, 0 -2px 0 #002896, 1px 1px #002896, -1px -1px 0 #002896, 1px -1px 0 #002896, -1px 1px 0 #002896;
+                cursor: pointer;
+            } 
+            .letracontactoFacebook::before { 
+                /* This will create the layer 
+                   over original text*/
+                content: attr(data-text); 
+                position: absolute;
+                top: 0; 
+                left: 0; 
+                /* Setting different color than 
+                   that of original text  */
+                color:#002896; 
+                overflow: hidden; 
+                /* Setting width to 0*/
+                height: 0%; 
+                transition: 1s; 
+            } 
+            .letracontactoFacebook:hover::before { 
+                /* Setting width to 100 on hover*/
+                height: 100%; 
+                cursor: pointer;
+            } 
+            
+            
+             .letracontactoTwitter { 
+                font-family: 'Fredoka One', cursive;
+                margin: 0; 
+                padding: 0; 
+                max-width: 75%;
+                position: relative;
+                top: 15%;
+                font-size: 5em; 
+                color: black; 
+                text-shadow: 2px 0 0 #00acee, -2px 0 0 #00acee, 0 2px 0 #00acee, 0 -2px 0 #00acee, 1px 1px #00acee, -1px -1px 0 #00acee, 1px -1px 0 #00acee, -1px 1px 0 #00acee;
+                cursor: pointer;
+                } 
+                .letracontactoTwitter::before { 
+                    /* This will create the layer 
+                       over original text*/
+                    content: attr(data-text); 
+                    position: absolute;
+                    top: 0; 
+                    left: 0; 
+                    /* Setting different color than 
+                       that of original text  */
+                    color: #00acee; 
+                    overflow: hidden; 
+                    /* Setting width to 0*/
+                    height: 0%; 
+                    transition: 1s; 
+                } 
+                .letracontactoTwitter:hover::before { 
+                    /* Setting width to 100 on hover*/
+                    height: 100%; 
+                    cursor: pointer;
+                } 
+                
+            
+            .letracontactoGitHub {
+                font-family: 'Mitr', sans-serif; 
+                margin: 0; 
+                max-width: 75%;
+                padding: 0; 
+                position: relative;
+                top: 15%;
+                font-size: 5em; 
+                color: black; 
+                text-shadow: 2px 0 0 #f5f5f5, -2px 0 0 #f5f5f5, 0 2px 0 #f5f5f5, 0 -2px 0 #f5f5f5, 1px 1px #fff, -1px -1px 0 #f5f5f5, 1px -1px 0 #f5f5f5, -1px 1px 0 #f5f5f5;
+                cursor: pointer;
+            } 
+            .letracontactoGitHub::before { 
+                /* This will create the layer 
+                over original text*/
+                content: attr(data-text); 
+                position: absolute;
+                top: 0; 
+                left: 0; 
+                /* Setting different color than 
+                that of original text  */
+                color:grey; 
+                overflow: hidden; 
+                /* Setting width to 0*/
+                height: 0%; 
+                transition: 1s; 
+            } 
+            .letracontactoGitHub:hover::before { 
+                /* Setting width to 100 on hover*/
+                height: 100%; 
+                cursor: pointer;
+            } 
+        
+
+            .letracontactoInstagram { 
+                font-family: 'Grand Hotel', cursive;
+                margin: 0; 
+                padding: 0; 
+                max-width: 75%;
+                position: relative;
+                top: 15%;
+                font-size: 5em; 
+                color: black; 
+                text-shadow: 2px 0 0 #405DE6, -2px 0 0 #5851DB, 0 2px 0 #833AB4, 0 -2px 0 #C13584, 1px 1px #E1306C, -1px -1px 0 #FD1D1D, 1px -1px 0 #F56040, -1px 1px 0 #F77737;
+                cursor: pointer;
+            } 
+            .letracontactoInstagram::before { 
+                /* This will create the layer 
+                    over original text*/
+                content: attr(data-text); 
+                position: absolute;
+                top: 0; 
+                left: 0; 
+                /* Setting different color than 
+                    that of original text  */
+                color:white; 
+                overflow: hidden; 
+                /* Setting width to 0*/
+                height: 0%; 
+                transition: 1s; 
+            } 
+            .letracontactoInstagram:hover::before { 
+                /* Setting width to 100 on hover*/
+                height: 100%; 
+                cursor: pointer;
+            } 
+            
+        }
+        .TarjetaContacto{
+            max-width: 95%;
+            margin-left: 2vw;
+            height: auto;
+            .contenedor {
+                top:25%;
+                max-width: 90%;
+	            min-height: 350px;
+                border-radius: 20px;
+                position: relative;
+                transition: 1.5s ease-in-out;
+                transform-style: preserve-3d;
+                &:hover {
+                    transform: rotateY(180deg);
+                }
+            }
+            .side {
+                position: absolute;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+                padding: 20px 50px;
+                color: #fff;
+                transform-style: preserve-3d;
+                backface-visibility: hidden;
+                border-radius: 20px;
+            }
+            .content {
+                transform: translatez(70px) scale(0.8);
+                line-height: 1.5em;
+                h1 {
+                    position: relative;
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        bottom: -20px;
+                        height: 3px;
+                        background-color: #3e3;
+                        width: 70px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
+                p {
+                    margin-top: 50px;
+                    line-height: 2em;
+                }
+            }
+            .front {
+                z-index: 2;
+                background-size: 100%;
+                background-size: cover;
+                background-image: url("../assets/FrontCard.jpg");
+            }
+            .back {
+                background-color: #333;
+                transform: rotateY(180deg);
+                z-index: 0;
+                padding-top: 10px;
+                background-image: url("../assets/BackCard.jpg");
+                h1 {
+                    margin: 0;
+                }
+            }
+            form {
+                text-align: left;
+                label {
+                    display: block;
+                    margin: 15px 0;
+                }
+                input {
+                    display: block;
+                    background: transparent;
+                    border: 0;
+                    border-bottom: 2px solid #444;
+                    padding: 5px;
+                    width: 100%;
+                    color: #fff;
+                }
+                textarea {
+                    background: transparent;
+                    border: 0;
+                    border-bottom: 2px solid #444;
+                    padding: 5px;
+                    width: 100%;
+                    color: #fff;
+                }
+                input[type="submit"] {
+                    display: block;
+                    width: auto;
+                    margin: 10px auto;
+                    padding: 5px 10px;
+                    border: 3px solid #555;
+                    border-radius: 4px;
+                    color: #fff;
+                    cursor: pointer;
+                }
+            }
+          }
+      }
+
+ 
+    //--------Final Secciones-------//
+    //--------carrusel de palabras----//
+    /*.wordCarousel {
+        font-size: 36px;
+        font-weight: 100;
+        color: #939393;
+        div {
+            overflow: hidden;
+            position: relative;
+            float: right;
+            height: 65px;
+            padding-top: 10px;
+            margin-top: -10px;
+            li {
+                font-family: Serif;
+                color: #ccc;
+                font-weight: 700;
+                padding: 0 10px;
+                height: 45px;
+                margin-bottom: 45px;
+                display: block;
+            }
+        }
+    
+    
+    .flip2 { animation: flip2 6s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+    .flip3 { animation: flip3 8s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+    .flip4 { animation: flip4 10s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+    
+    @keyframes flip2 {
+        0% { margin-top: -180px; }
+        5% { margin-top: -90px;  }
+        50% { margin-top: -90px; }
+        55% { margin-top: 0px; }
+        99.99% { margin-top: 0px; }
+        100% { margin-top: -270px; }
+    }
+    
+    @keyframes flip3 {
+        0% { margin-top: -270px; }
+        5% { margin-top: -180px; }
+        33% { margin-top: -180px; }
+        38% { margin-top: -90px; }
+        66% { margin-top: -90px; }
+        71% { margin-top: 0px; }
+        99.99% { margin-top: 0px; }
+        100% { margin-top: -270px; }
+    }
+    
+    @keyframes flip4 {
+        0% { margin-top: -360px; }
+        5% { margin-top: -270px; }
+        25% { margin-top: -270px; }
+        30% { margin-top: -180px; }
+        50% { margin-top: -180px; }
+        55% { margin-top: -90px; }
+        75% { margin-top: -90px; }
+        80% { margin-top: 0px; }
+        99.99% { margin-top: 0px; }
+        100% { margin-top: -270px; }
+    }
+
+    .twitter-timeline{
+        width: 10%;
+        height: 25%;
+    }
+    */ 
+        
+    }
