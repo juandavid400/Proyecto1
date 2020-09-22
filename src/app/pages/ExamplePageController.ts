@@ -18,6 +18,12 @@ export class ExamplePageController {
     start() {
         //window.scrollTo(0,0);
         //window.play
+    /*const music:any =this.musica;
+    const tarjet:any=this.findInsideMe(".TarjetaContacto");
+    console.log(music);
+    tarjet.mouseenter(function() {
+        music.play();
+      });*/
     const loader: any = this.findInsideMe(".loader");
     const container: any = this.findInsideMe(".container");
     const TopBarColor: any = this.findInsideMe(".Topbar");
@@ -47,7 +53,6 @@ export class ExamplePageController {
             console.log(`X: ${window.scrollX} Y: ${window.scrollY}`)
             if (window.scrollY <= 2400) {
             TopBarColor.style.background = 'rgb(102,147,74)';
-            a.stye.color='rgb(255,255,255)';
             }
             if (window.scrollY >= 2400) {
             TopBarColor.style.background = 'rgb(232, 232, 112)';
@@ -122,6 +127,10 @@ export class ExamplePageController {
         }*/
 
     }
+    /*musica() {
+        let musica=require(`../assets/beep.mp3`);
+        return musica;
+    }*/
     findInsideMe(selector: string, all = false) {
         const query = `#app #${this.component.id} ${selector}`;
         if (!all) {
