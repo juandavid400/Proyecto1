@@ -9,17 +9,15 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
   &::-webkit-scrollbar {
-    width: 20px;
-  }
-  &::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
+    width: 15px;
+    background: rgba(51, 51, 51, 0.9);
+    opacity: 0.5;
   }
   &::-webkit-scrollbar-thumb {
-    background: rgb(13, 104, 1);
-    border-radius: 10px;
+    background: rgb(255, 255, 255,.2);
+    border-radius: 5px;
     &:hover {
-      background: #045311;
+      background: rgb(255, 255, 255,.8);;
     }
   }
 }
