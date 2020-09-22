@@ -1,18 +1,5 @@
 @use '../fonts/fonts.scss';
-/*@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,600&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Sriracha&display=swap");
 
-//Twitter Font
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-//instagram
-@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap');
-//Facebook
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap');
-//Github
-@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@600&display=swap');
-*/
 // Colores de Redes Sociales----------------
 $facebookcolor:#002896;
 $twittercolor:#00acee;
@@ -46,164 +33,166 @@ $bar-size: 5px;
 $bar-radius: 60px;
 $bar-bg: rgba(0, 0, 0, 0.075);
 
+
+#example-page{
+  color: white;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+    .containercubo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 110%;
+      height: 110%;
+      background-color: rgb(102,147,74);
+      overflow-y:hidden;
+      overflow-x:hidden !important;
+    }
   
-  .containercubo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 110%;
-    background-color: rgb(102,147,74);
-    overflow-y:hidden;
-    overflow-x:hidden !important;
-  }
-
-  .cube {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    font-size: 500%;
-    height: 1em;
-    width: 1em;
-    transform: rotatex(30deg) rotatey(45deg);
-    transform-style: preserve-3d;
-    animation: cube-spin 1.5s infinite ease-in-out alternate;
-  }
-
-  .side {
-	
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transform-style: preserve-3d;
-    &::before {
-      content: "";
+    .cube {
+      position: absolute;
+      top: 0%;
+      left: 0;
+      right: 8%;
+      bottom: 30%;
+      margin: auto;
+      font-size: 600%;
+      height: 1em;
+      width: 1em;
+      transform: rotatex(30deg) rotatey(45deg);
+      transform-style: preserve-3d;
+      animation: cube-spin 1.5s infinite ease-in-out alternate;
+    }
+  
+    .side {
+    
       position: absolute;
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
-      background-color: currentcolor;
-      transform: translatez(0.5em);
-      animation: cube-explode 1.5s infinite ease-in-out;
-      background: white;
-      opacity: 0.5;
+      transform-style: preserve-3d;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: currentcolor;
+        transform: translatez(0.5em);
+        animation: cube-explode 1.5s infinite ease-in-out;
+        background: white;
+        opacity: 0.5;
+      }
     }
-  }
+    
+    @for $i from 1 through 4 {
+      .side:nth-child(#{$i}) {
+        transform: rotatey(90deg * $i);
+      }
+    }
+    
+    .side:nth-child(5) {
+      transform: rotatex(90deg);
+    }
+    
+    .side:nth-child(6) {
+      transform: rotatex(270deg);
+    }
+    
+    @keyframes cube-spin {
+      0% {
+        transform: rotatex(30deg) rotatey(45deg);
+      }
+      100% {
+        transform: rotatex(30deg) rotatey(45deg + 360deg);
+      }
+    }
+    
+    @keyframes cube-explode {
+      0% {
+        transform: translatez(0.5em);
+      }
+      50% {
+        transform: translatez(0.5em * 2.5);
+      }
+      100% {
+        transform: translatez(0.5em);
+      }
+    }
+    // body {
+    //   background: $gray-light;
+    // }
   
-  @for $i from 1 through 4 {
-    .side:nth-child(#{$i}) {
-      transform: rotatey(90deg * $i);
-    }
-  }
+    // Animation =============================================
+    // Edit these at random intervals to change the animation.
+    @keyframes loader {
+      0% {
+        width: 0;
+      }
   
-  .side:nth-child(5) {
-    transform: rotatex(90deg);
-  }
+      100% {
+        width: 155%;
+      }
+    }
   
-  .side:nth-child(6) {
-    transform: rotatex(270deg);
-  }
+    // Bar ============================================
+    .progress-bar {
+      border-radius: $bar-radius;
+      overflow: hidden;
+      width: 100%;
+      span {
+        display: block;
+      }
+    }
   
-  @keyframes cube-spin {
-    0% {
-      transform: rotatex(30deg) rotatey(45deg);
+    .bar {
+      background: $bar-bg;
     }
-    100% {
-      transform: rotatex(30deg) rotatey(45deg + 360deg);
-    }
-  }
   
-  @keyframes cube-explode {
-    0% {
-      transform: translatez(0.5em);
-    }
-    50% {
-      transform: translatez(0.5em * 2.5);
-    }
-    100% {
-      transform: translatez(0.5em);
-    }
-  }
-  body {
-    background: $gray-light;
-  }
-
-  // Animation =============================================
-  // Edit these at random intervals to change the animation.
-  @keyframes loader {
-    0% {
+    .progress {
+      animation: loader 8s ease infinite;
+      // Change the animation fill mode 'infinite' to 'forwards' to stop the animation from repeating.
+      background: $green;
+      color: #fff;
+      padding: $bar-size;
       width: 0;
     }
-
-    100% {
-      width: 155%;
-    }
-  }
-
-  // Bar ============================================
-  .progress-bar {
-    border-radius: $bar-radius;
-    overflow: hidden;
-    width: 100%;
-
-    span {
-      display: block;
-    }
-  }
-
-  .bar {
-    background: $bar-bg;
-  }
-
-  .progress {
-    animation: loader 8s ease infinite;
-    // Change the animation fill mode 'infinite' to 'forwards' to stop the animation from repeating.
-    background: $green;
-    color: #fff;
-    padding: $bar-size;
-    width: 0;
-  }
-
-  // Vertical Centering ==============================
-  // You don't need this to make it work on your site.
-  .progress-bar {
-    margin: 300px 0 0 0px;
-    left: 50%;
-    max-width: 50%;
-    position: absolute;
-    top: 70%;
-    transform: translate3d(-50%, -50%, 0);
-  }
-
-#example-page{
-  color: white;
-  overflow-x:hidden;
   
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+    // Vertical Centering ==============================
+    // You don't need this to make it work on your site.
+    .progress-bar {
+      margin: 300px 0 0 0px;
+      left: 45%;
+      max-width: 50%;
+      position: absolute;
+      top: 30%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+
         .Topbar{
           
             position: fixed;    
-            display: flex;
+            display: none;
             justify-content: center;
             align-items: center;
             flex-flow: row;
             height: 8vh;
             width: 100%;
             font-family: 'Josefin',sans-serif;
-            background-color: rgb(237, 237, 108);
+            transition: 0.5s ease;
+            background-color: rgb(102,147,74);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
             border-bottom: 2px solid rgb(0, 0, 0);
             opacity: 1;
-
+            .cuadradito{
+              margin-right: 4%;
+              border-radius: 20px;
+            }
             a {
-              &:not(:last-child) {
+              &:not(:last-child) {                
                 margin-right: 25px;
               }
             }
@@ -216,7 +205,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
               
               
               &:hover {
-                color: grey;
+                color: rgb(255, 255, 255);
               }
             }
             } 
@@ -245,25 +234,28 @@ $bar-bg: rgba(0, 0, 0, 0.075);
             justify-items: center;
             top: 30vh;
             width: 100%;
+            height: 100%;
             text-align: center;
             color: #000;
-            .border {
+              .border {
                 //background-color: #111;
                 color: black;
-                padding: 18px;
-                font-size: 8vmax;;
+                // margin-right: 70%;
+                font-size: 4vmax;
                 letter-spacing: 2px;
-            }
+                position: static;
+             }
+            
           }
       }
     .Img-2 {
         position: static;
-        opacity: 0.65;
+        opacity: 1;
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: url("../assets/Cali2.jpg");
+        background-image: url("../assets/fondo5.jpg");
         min-height: 45vh;
     }
 
@@ -287,11 +279,11 @@ $bar-bg: rgba(0, 0, 0, 0.075);
       border-radius: 15px;
       margin: 10% 5% 10% 5%;
       background: rgb(255,255,157);
-      //cursor: pointer;
       transition: 0.5s;
+      cursor: pointer;
 
       a {
-        font-family: "Satisfy", cursive;
+        font-family: 'Sriracha', cursive;
         text-decoration: none;
         margin-bottom: 5%;
         font-size: 5vh;
@@ -307,9 +299,9 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         margin-top: 15%;
       }
       &:hover {
+        transition: 0.5s ease;
         margin: 1% 5% 1% 5%;
         background-color: rgb(253, 253, 134);
-        transition: ease;
     }
     }
    
@@ -321,25 +313,26 @@ $bar-bg: rgba(0, 0, 0, 0.075);
       margin: 10% 5% 10% 5%;
       background: rgb(171,235,174);
       transition: 0.5s;
+      cursor: pointer;
 
       a {
-        font-family: "Satisfy", cursive;
+        font-family: 'Sriracha', cursive;
+        text-decoration: none;
         // margin-top: -700px;
         font-size: 5vh;
         text-align: center;
         color: black;
       }
       &:hover {
-        transition: 1s; 
+        transition: 0.5s ease; 
         margin: 1% 5% 1% 5%;
-        background-color: rgb(0, 243, 12);
-        transition: ease;
+        background-color: rgb(132, 248, 138);
     }
     .informacion{
-      width: 30%;
-      height: 30%;
-      margin-left: 35%;
-      margin-top: 0%;
+      width: 35%;
+      height: 35%;
+      margin-left: 32%;
+      margin-top: 3.5%;
     }
     }
     .Interior3 {
@@ -350,24 +343,26 @@ $bar-bg: rgba(0, 0, 0, 0.075);
       margin: 10% 5% 10% 5%;
       background: rgb(201,202,85);
       transition:0.5s;
+      cursor: pointer;
 
       a {
-        font-family: "Satisfy", cursive;
+        font-family: 'Sriracha', cursive;
+        text-decoration: none;
         // margin-top: -700px;
         font-size: 5vh;
         text-align: center;
         color: black;
       }
       .contactame{
-        width: 33%;
-        height: 33%;
+        width: 34%;
+        height: 34%;
         margin-left: 35%;
-        margin-top: 15%;
+        margin-top: 5%;
       }
       &:hover {
+        transition: 0.5s ease;
         margin: 1% 5% 1% 5%;
         background-color: rgb(200, 202, 43);
-        transition: ease;
     }
 
     }
@@ -392,7 +387,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         border-radius: 15px;
         margin: 10% 5% 10% 5%;
         background: #587c95;
-  
+        
         .Texto_2 {
           font-family: "Satisfy", cursive;
           font-size: 18vh;
@@ -416,18 +411,29 @@ $bar-bg: rgba(0, 0, 0, 0.075);
                 width: 100%;
             }
         }
+        // .linea {
+        //   margin-bottom: 5%;
+        // height: 4px;
+        // width: 100%;
+        // background-color: white;
+        // }
+
         .linea {
-          margin-bottom: 5%;
-        height: 9px;
-        width: 100%;
-        background-color: white;
+          width: 70%;
+          height: 3px;
+          background: #fff;
+          left: 0%;
         }
+
         .linea2 {
           margin-top: 5%;
-          height: 9px;
-          width: 100%;
-          background-color: white;
+          width: 70%;
+          height: 3px;
+          left: 20%;
+          background: #fff;
         }
+    
+        
       }
      
       .Interior2_2 {
@@ -449,7 +455,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
     //-------Seccion foto 3-------------//
     .Img-3 {
         position: relative;
-        opacity: 0.80;
+        opacity: 1;
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
@@ -466,7 +472,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         align-items: center;
         width: 100vw;
         height: 100vh;
-        background:  #495c5c;
+        background:  #536b6b;
       }
       
       .Interior_4 {
@@ -491,16 +497,20 @@ $bar-bg: rgba(0, 0, 0, 0.075);
           text-align: center;
           color: black;        
         }
-        .linea2{
-          display: flex;
-          justify-content: center;
-          align-content: center;
+        .linea3{
+         
           margin-top: 5vh;
-          height: 12px;
-          width: 0vw;
-          margin-left: 20vw;
+          height: 4px;
+          width: 50vw;
+          margin-left: 3vw;
           background-color: black;
-          animation-timing-function: ease
+        }
+        .linea4{
+          margin-top: 5vh;
+          height: 4px;
+          width: 50vw;
+          margin-left: 46vw;
+          background-color: black;
         }
   
     }
@@ -509,8 +519,9 @@ $bar-bg: rgba(0, 0, 0, 0.075);
     .IlustacionesTitle{
       background: rgb(171,235,174);
       padding-top: 5%;
+      // margin-bottom: 1%;
       width: 100vw;
-        height: 30vh;
+        height: 34vh;
         .tituloIlustraciones{
         text-align: center;
         color: #FFF;
@@ -545,7 +556,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         height: 100vh;
 
         left: 0px;
-        background: rgb(255,255,157);
+        background: rgb(171,235,174);
       }
       
       .Interior_5 {
@@ -557,7 +568,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         border-radius: 15px;
         margin-top: 1%;
         margin-left: 5%;
-        background: rgb(255,255,157);
+        background:rgb(171,235,174);
   
         .Texto_5 {
           font-family: "Satisfy", cursive;
@@ -573,6 +584,24 @@ $bar-bg: rgba(0, 0, 0, 0.075);
           color: black;
           cursor: pointer;
         }
+        .linea5{
+         
+          margin-bottom: 5vh;
+          height: 4px;
+          width: 30vw;
+          margin-left: 20vw;
+          background-color: black;
+          animation-timing-function: ease
+        }
+        .linea6{
+          margin-top: 5vh;
+          height: 4px;
+          width: 30vw;
+          margin-left: 0vw;
+          background-color: black;
+          animation-timing-function: ease
+        }
+  
       }
      
       .Interior2_5 {
@@ -585,7 +614,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         border-radius: 15px;
         margin-top: 1%;
         margin-left: 5%;
-        background: rgb(255,255,157);
+        background: rgb(171,235,174);
         .contenedor {
           padding: 50px;
           margin: auto;
@@ -648,7 +677,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
                 display: inline-block;
                 color: #fff;
                 text-decoration: none;
-                background-color: green;
+                background-color: rgb(99, 201, 104);
                 top: 10px;
                 padding: 10px;
                 width: 40px;
@@ -769,7 +798,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
       
       .Texto_8 {
         font-family: "Satisfy", cursive;
-        font-size: 8vh;
+        font-size: 10vh;
         text-align: center;
         color: black;
       }
@@ -786,283 +815,204 @@ $bar-bg: rgba(0, 0, 0, 0.075);
       .Interior_8 {
         display: flex;
         width: 95%;
-        height: 20%;
+        height: 40%;
         justify-items: center;
         align-items: center;
-        .circle-wrap-html {
-          @keyframes fill {
-            0% {
-              transform: rotate(0deg);
-            }
-            100% {
-              transform: rotate(145deg);//145
-            }
+        @-webkit-keyframes show100 {
+          from {
+            stroke-dashoffset: 537;
           }
-          margin: 1% auto;
-          width: 18vh;
-          height: 18vh;
-          background: #e6e2e7;
-          border-radius: 50%;
-          .circlehtml {
-            .mask {
-              width: 18vh;
-              height: 18vh;
-              position: absolute;
-              border-radius: 50%;
-              clip: rect(0px, 150px, 150px, 75px);
-              .fill {
-                clip: rect(0px, 75px, 150px, 0px);
-                background-color: #e34f26;
-              }
-            }
-            .fill {
-              width: 18vh;
-              height: 18vh; 
-              position: absolute;
-              border-radius: 50%;
-              animation: fill ease-in-out 3s;
-              transform: rotate(145deg);
-            }
-            .mask.full {
-              animation: fill ease-in-out 3s;
-              transform: rotate(145deg);
-            }
-          }
-          .inside-circlehtml {
-            width: 15vh;
-            height: 15vh;
-            color: black;
-            border-radius: 50%;
-            background: #fff;
-            line-height: 130px;
-            text-align: center;
-            margin-top: 10px;
-            margin-left: 10px;
-            position: absolute;
-            z-index: 100;
-            font-weight: 350;
-            font-size: 2em;
-            .html {
-              max-width: 50%;
-              max-height: auto;
-              transition: 0.5s ease;
-              &:hover {
-                margin-top: 5%;
-                max-width: 60%;
-                max-height: auto;
-            }
-            }
+          to {
+            stroke-dashoffset: 0;
           }
         }
-
-
-        .circle-wrap-css {
-
-        @keyframes fill2 {
-          0% {
-            transform: rotate(0deg);
+        @keyframes show100 {
+          from {
+            stroke-dashoffset: 537;
           }
-          100% {
-            transform: rotate(130deg);//130
+          to {
+            stroke-dashoffset: 0;
           }
         }
-          margin: 1% auto;
-          width: 18vh;
-          height: 18vh;
-          background: #e6e2e7;
-          border-radius: 50%;
-          .circlecss {
-            .mask {
-              width: 18vh;
-              height: 18vh;
-              position: absolute;
-              border-radius: 50%;
-              clip: rect(0px, 150px, 150px, 75px);
-              .fill2 {
-                clip: rect(0px, 75px, 150px, 0px);
-                background-color: #0d84ce;
-              }
-            }
-            .fill2 {
-              width: 18vh;
-              height: 18vh; 
-              position: absolute;
-              border-radius: 50%;
-              animation: fill ease-in-out 3s;
-              transform: rotate(130deg);
-            }
-            .mask.full2 {
-              animation: fill ease-in-out 3s;
-              transform: rotate(130deg);
-            }
+        @-webkit-keyframes show75 {
+          from {
+            stroke-dashoffset: 537;
           }
-          .inside-circlecss {
-            width: 15vh;
-            height: 15vh;
-            color: black;
-            border-radius: 50%;
-            background: #fff;
-            line-height: 130px;
-            text-align: center;
-            margin-top: 10px;
-            margin-left: 10px;
-            position: absolute;
-            z-index: 100;
-            font-weight: 350;
-            font-size: 2em;
-            .css {
-              max-width: 50%;
-              max-height: auto;
-              transition: 0.5s ease;
-              &:hover {
-                margin-top: 5%;
-                max-width: 60%;
-                max-height: auto;
-            }
-            }
+          to {
+            stroke-dashoffset: 134;
           }
         }
-
-      .circle-wrap-js {
-
-        @keyframes fill3 {
-          0% {
-            transform: rotate(0deg);
+        @keyframes show75 {
+          from {
+            stroke-dashoffset: 537;
           }
-          100% {
-            transform: rotate(141deg);//141
+          to {
+            stroke-dashoffset: 124;
           }
         }
-          margin: 1% auto;
-          width: 18vh;
-          height: 18vh;
-          background: #e6e2e7;
-          border-radius: 50%;
-          .circlejs {
-            .mask {
-              width: 18vh;
-              height: 18vh;
-              position: absolute;
-              border-radius: 50%;
-              clip: rect(0px, 150px, 150px, 75px);
-              .fill3 {
-                clip: rect(0px, 75px, 150px, 0px);
-                background-color: black;
-              }
-            }
-            .fill3 {
-              width: 18vh;
-              height: 18vh; 
-              position: absolute;
-              border-radius: 50%;
-              animation: fill ease-in-out 3s;
-              transform: rotate(141deg);
-            }
-            .mask.full3 {
-              animation: fill ease-in-out 3s;
-              transform: rotate(141deg);
-            }
-          
-          .inside-circlejs {
-            width: 15vh;
-            height: 15vh;
-            color: black;
-            border-radius: 50%;
-            background: #fff;
-            line-height: 130px;
-            text-align: center;
-            margin-top: 10px;
-            margin-left: 10px;
-            position: absolute;
-            z-index: 100;
-            font-weight: 350;
-            font-size: 2em;
-            .js {
-              max-width: 50%;
-              max-height: auto;
-              transition: 0.5s ease;
-              
-              &:hover {
-                margin-top: 5%;
-                max-width: 60%;
-              max-height: auto;
-            }
-            }
+        @-webkit-keyframes show50 {
+          from {
+            stroke-dashoffset: 537;
+          }
+          to {
+            stroke-dashoffset: 267;
           }
         }
-        }
-        .circle-wrap-node {
-
-          @keyframes fill4 {
-            0% {
-              transform: rotate(0deg);
-            }
-            100% {
-              transform: rotate(118deg);//118
-            }
+        @keyframes show50 {
+          from {
+            stroke-dashoffset: 537;
           }
-            margin: 1% auto;
-            margin-left: 2%;
-            width: 18vh;
-            height: 18vh;
-            background: #e6e2e7;
-            border-radius: 50%;
-            .circlenode {
-              .mask {
-                width: 18vh;
-                height: 18vh;
-                position: absolute;
-                border-radius: 50%;
-                clip: rect(0px, 150px, 150px, 75px);
-                .fill4 {
-                  clip: rect(0px, 75px, 150px, 0px);
-                  background-color: #83cd29;
-                }
-              }
-              .fill4 {
-                width: 18vh;
-                height: 18vh; 
-                position: absolute;
-                border-radius: 50%;
-                animation: fill ease-in-out 3s;
-                transform: rotate(118deg);
-              }
-              .mask.full4 {
-                animation: fill ease-in-out 3s;
-                transform: rotate(118deg);
-              }
+          to {
+            stroke-dashoffset: 267;
+          }
+        }
+        @-webkit-keyframes show25 {
+          from {
+            stroke-dashoffset: 537;
+          }
+          to {
+            stroke-dashoffset: 401;
+          }
+        }
+        @keyframes show25 {
+          from {
+            stroke-dashoffset: 537;
+          }
+          to {
+            stroke-dashoffset: 401;
+          }
+        }
+        .container2 {
+          padding: 100px 0;
+          text-align: center;
+        }
+        .chart {
+          position: relative;
+          display: inline-block;
+          color: white;
+          font-size: 80px;
+          text-align: center;
+          margin-top: 0%;
+          margin-left: 7%;
+          margin-right: -78%;
+          figcaption {
+            // padding: 50px 25px;
+            width: 180px;
+            height: 180px;
+            border: 17px solid #f0f0f0;
+            border-radius: 300px;
+            line-height: 50px;
             
-            .inside-circlenode {
-              width: 15vh;
-              height: 15vh;
-              color: black;
-              border-radius: 50%;
-              background: #fff;
-              line-height: 130px;
-              text-align: center;
-              margin-top: 10px;
-              margin-left: 10px;
-              position: absolute;
-              z-index: 100;
-              font-weight: 350;
-              font-size: 2em;
-              .node {
-                padding-top: 8%;
-                max-width: 80%;
-                max-height: auto;
-                transition: 0.5s ease;
-                
-                &:hover {
-                 margin-top: -10%;
-                max-width: 100%;
-                max-height: auto;
-              }
+          }
+          img {
+            position: absolute;
+            max-width: 55%;
+            max-height: 55%;
+            // background: white;
+          }
+          svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+          }
+          &:hover {
+            .outer {
+              stroke-dashoffset: 534 !important;
+              -webkit-animation-play-state: paused;
+            }
+          }
+        }
+        .html {
+          top: 25%;
+          left: 23%;
+          + {
+            svg {
+              .outer {
+                stroke: #e34f26;
               }
             }
           }
+        }
+        .css {
+          top: 25%;
+          left: 23%;
+          + {
+            svg {
+              .outer {
+                stroke: #0d84ce;
+              }
+            }
           }
-
-		  } 
+        }
+        .javascript {
+          top: 25%;
+          left: 25%;
+          + {
+            svg {
+              .outer {
+                stroke: #f0e040;
+              }
+            }
+          }
+        }
+        .node {
+          width: 60%;
+          height: 60%;
+          top: 23%;
+          left: 23%;
+          + {
+            svg {
+              .outer {
+                stroke: #83cd29;
+              }
+            }
+          }
+          
+        }
+        .Skills{
+          font-size: 300px;
+          font-family: 'Satisfy', cursive;
+          color: black;
+        }
+        .outer {
+          fill: transparent;
+          stroke: #333; 
+          stroke-width: 20;        
+          stroke-dasharray: 534;
+          transition: stroke-dashoffset 1s;
+          -webkit-animation-play-state: running;
+          -moz-transform: rotate(-89deg) translateX(-190px);
+        }
+        .chart[data-percent='100'] {
+          .outer {
+            stroke-dashoffset: 0;
+            -webkit-animation: show100 2s;
+            animation: show100 2s;
+          }
+        }
+        .chart[data-percent='75'] {
+          .outer {
+            stroke-dashoffset: 133;
+            -webkit-animation: show75 2s;
+            animation: show75 2s;
+          }
+        }
+        .chart[data-percent='50'] {
+          .outer {
+            stroke-dashoffset: 267;
+            -webkit-animation: show50 2s;
+            animation: show50 2s;
+          }
+        }
+        .chart[data-percent='25'] {
+          .outer {
+            stroke-dashoffset: 401;
+            -webkit-animation: show25 2s;
+            animation: show25 2s;
+          }
+        }
+      }
     //--//--//--Final de animacion scss--//--//--//
     .Interior2_8 {
       display: grid;
@@ -1100,7 +1050,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         .Porcentaje_8 {
           font-family: 'Sriracha', cursive;
           // margin-top: 100px;
-          font-size: 100%;
+          font-size: 120%;
           text-align: center;
           color: black;
           
@@ -1132,7 +1082,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         .Porcentaje2_8 {
           font-family: 'Sriracha', cursive;
           // margin-top: 100px;
-          font-size: 100%;
+          font-size: 120%;
           text-align: center;
           color: black;
           margin-left: 5%;
@@ -1165,7 +1115,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         .Porcentaje3_8 {
           font-family: 'Sriracha', cursive;
           // margin-top: 100px;
-          font-size: 100%;
+          font-size: 120%;
           text-align: center;
           color: black;
           margin-left: 5%;
@@ -1197,7 +1147,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         .Porcentaje4_8 {
           font-family: 'Sriracha', cursive;
           // margin-top: 100px;
-          font-size: 100%;
+          font-size: 120%;
           text-align: center;
           color: black;
           margin-left: 10%;
@@ -1228,6 +1178,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
   
         .TextTitle {
           top: 15%;
+          margin-left: 85%;
           font-family: "Satisfy", cursive;
           font-size: 450%;
           text-align: center;
@@ -1278,16 +1229,16 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         height: 100%;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-        background-color: white;
+        background-color: rgb(232, 232, 112);
         border-radius:15px;
         color: black;
         img{
           justify-items: center;
           align-items: center;
-          margin-top: 30%;
+          margin-top: 4%;
           border-radius:15px;
-          height: 50%;
-          width: 80%;
+          height: 90%;
+          width: 90%;
         }
       }
       .flip-card-back {
@@ -1299,7 +1250,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         justify-content: space-between;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
-        background-color:  rgb(247, 247, 68);;
+        background-color:  rgb(248, 248, 116);;
         color: black;
         border-radius:15px;
         transform: rotateY(180deg);
@@ -1313,17 +1264,17 @@ $bar-bg: rgba(0, 0, 0, 0.075);
     //----------Foto antes de los contactos
     .img3 {
         position: relative;
-        opacity: 0.8;
+        opacity: 1;
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: url("../assets/Cali3.jpg");
+        background-image: url("../assets/fondo4.jpg");
         min-height: 50vh;
     }
     //-------Seccion de contacto-----//
     .contacttitle{
-        background-color: rgb(102, 102, 102);
+        background-color: black;
 
         .tituloContacto{
         text-align: center;
@@ -1462,7 +1413,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
                 left: 0; 
                 /* Setting different color than 
                 that of original text  */
-                color:grey; 
+                color:grey;
                 overflow: hidden; 
                 /* Setting width to 0*/
                 height: 0%; 
@@ -1622,7 +1573,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
     @media screen and(max-width: 415px){
       .Topbar{
         position: fixed;    
-        display: flex;
+        display: none;
         justify-content: center;
         align-items: center;
         flex-flow: column wrap;
@@ -1668,7 +1619,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         min-height: 100vh;
         .caption {
           font-family: 'Sriracha', cursive;
-            position: absolute;
+            position: static;
             justify-items: center;
             top: 40vh;
             width: 100%;
@@ -1676,7 +1627,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
             //color: #000;
             .border {
                 //background-color: #111;
-                color: #fff;
+                color: black;
                 padding: 18px;
                 font-size: 5vh;
                 letter-spacing: 2px;
@@ -1735,13 +1686,13 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         }
         .linea {
           margin-bottom: 5%;
-        height: 9px;
+        height: 4px;
         width: 100%;
         background-color: white;
         }
         .linea2 {
           margin-top: 5%;
-          height: 9px;
+          height: 4px;
           width: 100%;
           background-color: white;
         }
