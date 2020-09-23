@@ -38,6 +38,7 @@ export class ExamplePageController {
     const linea5: any =this.findInsideMe(".linea5");
     const linea6: any =this.findInsideMe(".linea6");
     const Grafiti: any = this.findInsideMe(".Grafiti");
+    const borderTitulo: any = this.findInsideMe(".borderTitulo");
     const Texto_5: any = this.findInsideMe(".Texto_5");
     const Descripcion_5: any = this.findInsideMe(".Descripcion_5");
     const progress: any = this.findInsideMe(".progress-bar");
@@ -55,6 +56,7 @@ export class ExamplePageController {
     //Sale las opacidades y posiciones
     setTimeout(function () {
         lineaR.style.opacity = 0;
+        borderTitulo.style.opacity = 1;
         linea2.style.opacity = 0;
         linea3.style.opacity = 0;
         linea4.style.opacity = 0;

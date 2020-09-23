@@ -235,8 +235,9 @@ $bar-bg: rgba(0, 0, 0, 0.075);
             height: 100%;
             text-align: center;
             color: #000;
-              .border {
+              .borderTitulo {
                 //background-color: #111;
+                opacity: 0;
                 color: black;
                 // margin-right: 70%;
                 font-size: 4vmax;
@@ -1462,16 +1463,18 @@ $bar-bg: rgba(0, 0, 0, 0.075);
           max-width: 95%;
           margin-left: 2vw;
           height: auto;
+          
           .contenedor {
               top:25%;
               max-width: 90%;
             min-height: 350px;
               border-radius: 20px;
               position: relative;
-              transition: 1.5s ease-in-out;
               transform-style: preserve-3d;
+              transition: 1.5s ease-in-out;
+              
               &:hover {
-                  transform: rotateY(180deg);
+                  transform: scale(1.15);
               }
           }
           .content {
@@ -1479,7 +1482,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
               line-height: 1.5em;
               h1 {
                   position: relative;
-                  &:before {
+                  &:hover {
                       content: "";
                       position: absolute;
                       bottom: -20px;
@@ -1502,7 +1505,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
               height: 100%;
               padding: 20px 50px;
               color: #fff;
-              transform-style: preserve-3d;
+              //transform-style: preserve-3d;
               backface-visibility: hidden;
               border-radius: 20px;
               z-index: 2;
@@ -1517,11 +1520,11 @@ $bar-bg: rgba(0, 0, 0, 0.075);
               height: 100%;
               padding: 20px 50px;
               color: #fff;
-              transform-style: preserve-3d;
+              //transform-style: preserve-3d;
               backface-visibility: hidden;
               border-radius: 20px;
               background-color: #333;
-              transform: rotateY(180deg);
+              //transform: rotateY(180deg);
               z-index: 0;
               padding-top: 10px;
               background-image: url("../assets/BackCard.jpg");
