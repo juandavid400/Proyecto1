@@ -1,4 +1,4 @@
-@use '../fonts/fonts.scss';
+@use '../../fonts/fonts.scss';
 
 // Colores de Redes Sociales----------------
 $facebookcolor:#002896;
@@ -224,7 +224,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: url("../assets/Bienvenida.jpg");
+        background-image: url("../../assets/Bienvenida.jpg");
         min-height: 100vh;
         .caption {
             font-family: "Satisfy", cursive;
@@ -254,7 +254,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: url("../assets/fondo5.jpg");
+        background-image: url("../../assets/fondo5.jpg");
         min-height: 45vh;
     }
 
@@ -459,7 +459,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: url("../assets/fondo.jpg");
+        background-image: url("../../assets/fondo.jpg");
         min-height: 40vh;
     }
 
@@ -1268,7 +1268,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: url("../assets/fondo4.jpg");
+        background-image: url("../../assets/fondo4.jpg");
         min-height: 50vh;
     }
     //-------Seccion de contacto-----//
@@ -1286,7 +1286,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         letter-spacing: 1px;
         font-family: 'Mitr', sans-serif; 
         .letraTituloContacto{
-            background-image: url("../assets/Contatctos.gif");
+            background-image: url("../../assets/Contatctos.gif");
             background-size: cover;
             color: transparent;
             background-clip: text;
@@ -1511,7 +1511,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
               z-index: 2;
               background-size: 100%;
               background-size: cover;
-              background-image: url("../assets/FrontCard.jpg");
+              background-image: url("../../assets/FrontCard.jpg");
           }
           .backside {
             position: absolute;
@@ -1527,7 +1527,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
               //transform: rotateY(180deg);
               z-index: 0;
               padding-top: 10px;
-              background-image: url("../assets/BackCard.jpg");
+              background-image: url("../../assets/BackCard.jpg");
               h1 {
                   margin: 0;
               }
@@ -1616,7 +1616,7 @@ $bar-bg: rgba(0, 0, 0, 0.075);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        background-image: url("../assets/Bienvenida.jpg");
+        background-image: url("../../assets/Bienvenida.jpg");
         min-height: 100vh;
         .caption {
           font-family: 'Sriracha', cursive;
